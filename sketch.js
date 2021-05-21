@@ -15,7 +15,7 @@ function setup() {
   weight=random(500,1500);
   thickness=random(20,80);
 
-  car.velocityX=speed;
+ bullet.velocityX=speed;
 }
 
 function draw() {
@@ -38,10 +38,10 @@ if(collided(bullet,wall)){
 bullet.velocityX=0;
   var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
   if(damage>10){
-    bullet.shapeColor= color("red");
+    wall.shapeColor= color("red");
   }
    if(damage<10){
-    bullet.shapeColor= color("yellow");
+    wall.shapeColor= color("yellow");
   }
    
 }
