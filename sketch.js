@@ -25,17 +25,26 @@ function draw() {
   bullet.velocityX=0;
   var deformation=0.5*speed*weight*speed/22509;
   if(deformation > 180){
-    bullet.shapeColor= color("red");
+    bullet.shapeColor= color("white");
   }
   if(deformation<180 && deformation>100){
-    bullet.shapeColor= color("yellow");
+    bullet.shapeColor= color("white");
   }
   if(deformation < 100){
-    bullet.shapeColor= color("green");
+    bullet.shapeColor= color("white");
   }
 
-
-
+if(collided(bullet,wall)){
+bullet.velocityX=0;
+  var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
+  if(damage>10){
+    bullet.shapeColor= color("red");
+  }
+   if(damage<10){
+    bullet.shapeColor= color("yellow");
+  }
+   
+}
   drawSprites();
 }
 
