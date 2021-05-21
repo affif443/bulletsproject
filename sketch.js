@@ -15,9 +15,9 @@ function setup() {
 
   speed=random(40,90);
   weight=random(200,500);
-  
-
- bullet.velocityX = 60;
+    
+  bullet.velocityX=speed;
+ 
 }
 
 function draw() {
