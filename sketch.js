@@ -55,8 +55,8 @@ bullet.velocityX=0;
 
 function hascollided(lbullet,lwall){
 
-  bulletRightEdge= lbullet.x + lbullet.width;
-  wallRightEdge=lwall.width;
+  bulletRightEdge= bullet.x + bullet.width;
+  wallRightEdge=wall.width;
 
   if(bulletRightEdge>=wallRightEdge){
 
