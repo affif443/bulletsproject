@@ -8,12 +8,14 @@ function setup() {
   createCanvas(1600,400);
   createSprite(400, 200, 50, 50);
 
+  thickness=random(20,80);
+
   bullet = createSprite(50,200,50,10);
   wall= createSprite(1200,200,thickness,100);
 
   speed=random(40,90);
-  weight=random(500,1500);
-  thickness=random(20,80);
+  weight=random(200,500);
+  
 
  bullet.velocityX=speed;
 }
@@ -25,23 +27,25 @@ function draw() {
   bullet.velocityX=0;
   var deformation=0.5*speed*weight*speed/22509;
   if(deformation > 180){
-    bullet.shapeColor= color("white");
+    bullet.shapeColor= "white";
   }
   if(deformation<180 && deformation>100){
-    bullet.shapeColor= color("white");
+    bullet.shapeColor= "white";
   }
   if(deformation < 100){
-    bullet.shapeColor= color("white");
+    bullet.shapeColor= "white";
   }
+ if(hascollided(bullet,wall)){
 
-if(collided(bullet,wall)){
 bullet.velocityX=0;
-  var damage=0.5*weight*speed*speed/(thickness*thickness*thickness);
+
+  var damage = 0.5*weight*speed*speed/(thickness*thickness*thickness);
+
   if(damage>10){
-    wall.shapeColor= color("red");
+    wall.shapeColor = "red";
   }
    if(damage<10){
-    wall.shapeColor= color("yellow");
+    wall.shapeColor = "yellow";
   }
    
 }
@@ -49,19 +53,20 @@ bullet.velocityX=0;
 }
 
 
-function collided(lbullet,lwall){
+function hascollided(lbullet,lwall){
 
   bulletRightEdge= lbullet.x + lbullet.width;
   wallRightEdge=lwall.width;
 
   if(bulletRightEdge>=wallRightEdge){
-    return true;
+
+    return true
   }
     return false;
 }
     
 
-}
+
 
 
 
