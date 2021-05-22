@@ -23,8 +23,9 @@ function setup() {
 function draw() {
   background("black");
   
-  if(wall.x-bullet.x < (bullet.width+wall.width)/2)
+  if(wall.x-bullet.x < (bullet.width+wall.width)/2){
   bullet.velocityX=0;
+  }
   var deformation=0.5*speed*weight*speed/22509;
   if(deformation > 180){
     bullet.shapeColor= "white";
@@ -36,12 +37,9 @@ function draw() {
     bullet.shapeColor= "white";
   }
  if(hascollided(bullet,wall)){
-
-bullet.velocityX=0;
-
-  var damage = 0.5*weight*speed*speed/(thickness*thickness*thickness);
-
-  if(damage>10){
+   bullet.velocityX=0;
+   var damage = 0.5*weight*speed*speed/(thickness*thickness*thickness);
+   if(damage>10){
     wall.shapeColor = "red";
   }
    if(damage<10){
@@ -60,7 +58,7 @@ function hascollided(lbullet,lwall){
 
   if(bulletRightEdge>=wallRightEdge){
 
-    return true
+    return true;
   }
     return false;
 }
