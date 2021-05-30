@@ -54,9 +54,9 @@ function draw() {
 function hascollided(lbullet,lwall){
 
   bulletRightEdge= bullet.x + bullet.width;
-  wallRightEdge=wall.width;
+  wallleftEdge=wall.width;
 
-  if(bulletRightEdge>=wallRightEdge){
+  if(bulletRightEdge>=wallleftEdge){
 
     return true;
   }
