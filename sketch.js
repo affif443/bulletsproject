@@ -51,7 +51,7 @@ function draw() {
 }
 
 
-function hascollided(lbullet,lwall){
+function hascollided(bullet,wall){
 
   bulletRightEdge= bullet.x + bullet.width;
   wallleftEdge=wall.width;
